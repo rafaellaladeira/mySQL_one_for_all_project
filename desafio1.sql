@@ -33,7 +33,7 @@ CREATE TABLE SpotifyClone.musics(
     duration_s INT,
     FOREIGN KEY (album_id) REFERENCES album(album_id) 
 ) engine = InnoDB;
-CREATE TABLE SpotifyClone.play_historic(
+CREATE TABLE SpotifyClone.history(
     users_id INT NOT NULL,
     music_id INT NOT NULL,
     date_reproduced DATETIME NOT NULL,
@@ -80,16 +80,16 @@ VALUES
 
 INSERT INTO SpotifyClone.album (album_id, name_album, artist_id, release_year)
 VALUES
-    (1, 'Envious', 1, '1990'),
-    (2,'Exuberant', 1, '1993'),
-    (3, 'Hallowed Steam', 2, '1995'),
-    (4, 'Incandescent', 3, '1998'),
-    (5, 'Temporary Culture', 4, '2001'),
-    (6, 'Library of liberty', 4, '2003'),
-    (7,'Chained Down', 5, '2007'),
-    (8, 'Cabinet of fools', 5, '2012'),
-    (9,'No guarantees'. 5, '2015'),
-    (10, 'Apparatus', 6, '2015');
+    (1, 'Envious', 1, 1990),
+    (2,'Exuberant', 1, 1993),
+    (3, 'Hallowed Steam', 2, 1995),
+    (4, 'Incandescent', 3, 1998),
+    (5, 'Temporary Culture', 4, 2001),
+    (6, 'Library of liberty', 4, 2003),
+    (7,'Chained Down', 5, 2007),
+    (8, 'Cabinet of fools', 5, 2012),
+    (9,'No guarantees', 5, 2015),
+    (10, 'Apparatus', 6, 2015);
 
 
 INSERT INTO SpotifyClone.musics (music_id, name_music, album_id, duration_s)
@@ -136,7 +136,7 @@ VALUES
     (40, "You Make Me Feel So..", 10, 83);
 
 
-INSERT INTO SpotifyClone.play_historic ( users_id, music_id, date_reproduced)
+INSERT INTO SpotifyClone.history ( users_id, music_id, date_reproduced)
 VALUES
     (1, 36, '2020-02-28 10:45:55'),
     (1, 25, '2020-05-02 05:30:35'),
